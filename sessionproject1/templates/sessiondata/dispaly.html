@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'sessiondata/base.html' %}
+    {% block body_block %}
+    <h1 style="text-align: center;">Your Cart items</h1><hr>
+    <div class="container">
+        {% if request.session %}
+        <table>
+            <thead>
+                <th>ITEMS</th>
+                <th>QUANTITY</th>
+            </thead>
+            {% for key,value in request.session %}
+            <tr>
+                <td>{{key}}</td>
+                <td>{{value}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p>No items in Cart</p>
+        {% endif %}
+    </div>
+    {% endblock %}

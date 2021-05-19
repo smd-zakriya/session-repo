@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends 'sessiondata/base.html' %}
+    {% block body_block %}
+    <h1 style="text-align: center;">Add your items to Cart</h1><hr>
+    <div class="jumbotron" style="text-align: center;">
+        <form  method="POST">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form><br><br>
+        <a class="btn btn-primary" href="/session/display/" role="button">Display Cart</a>
+    </div>
+    {% endblock %}
